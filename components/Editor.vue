@@ -12,12 +12,12 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 const editor = useEditor({
     content: props.modelValue,
-    onUpdate: ({editor}) => {
+    onUpdate: ({ editor }) => {
         emit('update:modelValue', editor.getHTML())
     },
     editorProps: {
         attributes: {
-            class: 'border border-gray-500 p-4',
+            class: 'border border-gray-500 p-4 prose max-w-none min-h-[15rem]  max-h-[15rem] overflow-y-auto',
         },
     },
     extensions: [
@@ -29,93 +29,83 @@ const editor = useEditor({
 </script>
 <template>
     <section v-if="editor"
-        class="buttons flex items-center flex-wrap gap-x-4 border-t border-l border-r border-gray-500 p-4">
+        class="buttons flex items-center flex-wrap gap-x-2 border-t border-l border-r border-gray-500 p-2">
         <button type="button" @click="editor.chain().focus().toggleBold().run()"
             :disabled="!editor.can().chain().focus().toggleBold().run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('bold') }" class="p-1">
-            Bold
+            :class="{ 'bg-gray-200 rounded': editor.isActive('bold') }" class="py-1 px-2">
+            <Icon name="material-symbols:format-bold" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleItalic().run()"
             :disabled="!editor.can().chain().focus().toggleItalic().run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('italic') }" class="p-1">
-            Italic
+            :class="{ 'bg-gray-200 rounded': editor.isActive('italic') }" class="py-1 px-2">
+            <Icon name="material-symbols:format-italic" color="black" />
         </button>
-
-
         <button type="button" @click="editor.chain().focus().toggleStrike().run()"
             :disabled="!editor.can().chain().focus().toggleStrike().run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('strike') }" class="p-1">
-            strike
+            :class="{ 'bg-gray-200 rounded': editor.isActive('strike') }" class="py-1 px-2">
+            <Icon name="material-symbols:format-strikethrough" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleCode().run()"
             :disabled="!editor.can().chain().focus().toggleCode().run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('code') }" class="p-1">
-            code
+            :class="{ 'bg-gray-200 rounded': editor.isActive('code') }" class="py-1 px-2">
+            <Icon name="material-symbols:code" color="black" />
+        
         </button>
         <button type="button" @click="editor.chain().focus().setParagraph().run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('paragraph') }" class="p-1">
-            paragraph
+            :class="{ 'bg-gray-200 rounded': editor.isActive('paragraph') }" class="py-1 px-2">
+            <Icon name="mdi:format-paragraph" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleUnderline().run()"
             :class="{ 'bg-gray-200 rounded': editor.isActive('underline') }">
-            toggleUnderline
+            <Icon name="material-symbols:format-underlined" color="black" />
         </button>
-
-
-
-
         <button type="button" @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 1 }) }" class="p-1">
-            h1
+            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 1 }) }" class="py-1 px-2">
+            <Icon name="lucide:heading-1" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 2 }) }" class="p-1">
-            h2
+            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 2 }) }" class="py-1 px-2">
+            <Icon name="lucide:heading-2" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 3 }) }" class="p-1">
-            h3
+            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 3 }) }" class="py-1 px-2">
+            <Icon name="lucide:heading-3" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 4 }) }" class="p-1">
-            h4
+            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 4 }) }" class="py-1 px-2">
+            <Icon name="lucide:heading-4" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 5 }) }" class="p-1">
-            h5
+            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 5 }) }" class="py-1 px-2">
+            <Icon name="lucide:heading-5" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 6 }) }" class="p-1">
-            h6
+            :class="{ 'bg-gray-200 rounded': editor.isActive('heading', { level: 6 }) }" class="py-1 px-2">
+            <Icon name="lucide:heading-6" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleBulletList().run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('bulletList') }" class="p-1">
-            bullet list
+            :class="{ 'bg-gray-200 rounded': editor.isActive('bulletList') }" class="py-1 px-2">
+            <Icon name="material-symbols:format-list-bulleted" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleOrderedList().run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('orderedList') }" class="p-1">
-            ordered list
+            :class="{ 'bg-gray-200 rounded': editor.isActive('orderedList') }" class="py-1 px-2">
+            <Icon name="mdi:order-numeric-ascending" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().toggleBlockquote().run()"
-            :class="{ 'bg-gray-200 rounded': editor.isActive('blockquote') }" class="p-1">
-            blockquote
+            :class="{ 'bg-gray-200 rounded': editor.isActive('blockquote') }" class="py-1 px-2">
+            <Icon name="tabler:blockquote" color="black" />
         </button>
         <button type="button" @click="editor.chain().focus().setHorizontalRule().run()">
-            horizontal rule
+            <Icon name="octicon:horizontal-rule" color="black" />
         </button>
-        <button type="button" @click="editor.chain().focus().undo().run()" :disabled="!editor.can().chain().focus().undo().run()">
-            undo
+        <button type="button" @click="editor.chain().focus().undo().run()"
+            :disabled="!editor.can().chain().focus().undo().run()">
+            <Icon name="material-symbols:undo" color="black" />
         </button>
-        <button type="button" @click="editor.chain().focus().redo().run()" :disabled="!editor.can().chain().focus().redo().run()">
-            redo
-        </button> <!---->
-
+        <button type="button" @click="editor.chain().focus().redo().run()"
+            :disabled="!editor.can().chain().focus().redo().run()">
+            <Icon name="material-symbols:redo" color="black" />
+        </button>
     </section>
     <EditorContent :editor="editor" />
 </template>
-  
-
-
-<style>
-/*  */
-</style>

@@ -12,12 +12,13 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.10.0",
+    "@tailwindcss/typography": "^0.5.10",
     "nuxt": "^3.8.1",
+    "nuxt-icon": "^0.6.6",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.10",
     "@tiptap/extension-heading": "^2.1.12",
     "@tiptap/extension-underline": "^2.1.12",
     "@tiptap/pm": "^2.1.12",

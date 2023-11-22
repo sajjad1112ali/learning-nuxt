@@ -14,6 +14,7 @@
         <Editor v-model="blog.content" />
 
       </div>
+      <button class="bg-gray-900 text-gray-100 px-3 py-3 rounded" type="submit">SUBMIT</button>
     </form>
   </div>
 </template>
@@ -23,13 +24,13 @@ export default {
     return {
       blog: {
         title: '',
-        content: '<p>I’m running Tiptap with Vue.js. 🎉</p>',
+        content: '',
       }
     }
   },
   methods: {
     submitForm() {
-      console.log('YOU CLICK SUBMIT')
+      console.log(this.blog.content)
     }
   }
 }
