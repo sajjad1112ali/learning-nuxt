@@ -5,7 +5,10 @@ import StarterKit from '@tiptap/starter-kit'
 // install these
 import Underline from '@tiptap/extension-underline'
 import Heading from '@tiptap/extension-heading'
-
+import Table from '@tiptap/extension-table'
+import TableCell from '@tiptap/extension-table-cell'
+import TableHeader from '@tiptap/extension-table-header'
+import TableRow from '@tiptap/extension-table-row'
 const props = defineProps({
     modelValue: String,
 });
@@ -24,6 +27,27 @@ const editor = useEditor({
         StarterKit,
         Underline,
         Heading,
+        Table.configure({
+            resizable: true,
+            HTMLAttributes: {
+                class: 'table-auto',
+            },
+        }),
+        TableRow.configure({
+            HTMLAttributes: {
+                class: 'border border-gray-700',
+            },
+        }),
+        TableHeader.configure({
+            HTMLAttributes: {
+                class: 'border border-gray-700',
+            },
+        }),
+        TableCell.configure({
+            HTMLAttributes: {
+                class: 'border border-gray-700',
+            },
+        }),
     ],
 })
 </script>
@@ -49,7 +73,7 @@ const editor = useEditor({
             :disabled="!editor.can().chain().focus().toggleCode().run()"
             :class="{ 'bg-gray-200 rounded': editor.isActive('code') }" class="py-1 px-2">
             <Icon name="material-symbols:code" color="black" />
-        
+
         </button>
         <button type="button" @click="editor.chain().focus().setParagraph().run()"
             :class="{ 'bg-gray-200 rounded': editor.isActive('paragraph') }" class="py-1 px-2">
@@ -105,6 +129,10 @@ const editor = useEditor({
         <button type="button" @click="editor.chain().focus().redo().run()"
             :disabled="!editor.can().chain().focus().redo().run()">
             <Icon name="material-symbols:redo" color="black" />
+        </button>
+
+        <button @click="editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()">
+            Table
         </button>
     </section>
     <EditorContent :editor="editor" />
