@@ -29,6 +29,7 @@
     "@tiptap/pm": "^2.1.12",
     "@tiptap/starter-kit": "^2.1.12",
     "@tiptap/vue-3": "^2.1.12",
-    "mongoose": "^8.0.1"
+    "mongoose": "^8.0.1",
+    "mongoose-bcrypt": "^1.11.0"
   }
 }

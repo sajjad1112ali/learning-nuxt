@@ -10,5 +10,11 @@ export default defineNuxtConfig({
       title: 'My Test Project',
       link: []
     }
-  }
+  },
+  runtimeConfig: {
+    mongoUrl: process.env.MONGO_URL,
+  }, 
+  nitro: {
+    plugins: ["~/server/index.ts"],
+  },
 })
