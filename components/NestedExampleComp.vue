@@ -20,7 +20,10 @@ export default {
         {
           name: "task 1",
           tasks: [
-
+          {
+          name: "task 222",
+          tasks: []
+        }
           ]
         }, {
           name: "task 2",
