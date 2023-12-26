@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
+    "@he-tree/vue": "^2.7.3",
     "@tiptap/extension-heading": "^2.1.12",
     "@tiptap/extension-link": "^2.1.12",
     "@tiptap/extension-table": "^2.1.12",
@@ -32,6 +33,7 @@
     "@tiptap/vue-3": "^2.1.12",
     "mongoose": "^8.0.1",
     "mongoose-bcrypt": "^1.11.0",
-    "pinia": "^2.1.7"
+    "pinia": "^2.1.7",
+    "vue-draggable-next": "^2.2.1"
   }
 }
