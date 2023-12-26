@@ -1,27 +1,21 @@
 <template>
     <draggable
-      class="dragArea"
-      tag="ul"
+      class="border p-4"
+      tag="div"
       :list="tasks"
       :group="{ name: 'g1' }"
       item-key="name"
     >
 
-    <li
+    <div
+    class=" ml-4"
           v-for="element in tasks"
           :key="element.name"
         >
         {{ element.name }}
 
         <NestedDraggable :tasks="element.tasks" /> 
-        </li>
-
-      <!-- <template #item="{ element }">
-        <li>
-          <p>{{ element.name }}</p>
-          <NestedDraggable :tasks="element.tasks" />
-        </li>
-      </template> -->
+        </div>
     </draggable>
   </template>
   <script>
@@ -32,7 +26,7 @@ import { VueDraggableNext } from 'vue-draggable-next';
       tasks: {
         required: true,
         type: Array
-      }
+      },
     },
     components: {
       draggable: VueDraggableNext
@@ -40,8 +34,4 @@ import { VueDraggableNext } from 'vue-draggable-next';
   };
   </script>
   <style scoped>
-  .dragArea {
-    min-height: 50px;
-    outline: 1px dashed;
-  }
   </style>

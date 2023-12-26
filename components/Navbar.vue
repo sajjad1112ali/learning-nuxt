@@ -35,10 +35,11 @@
            
             <NuxtLink class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" href="/">Home</NuxtLink>
           <NuxtLink class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="/editor">Editor</NuxtLink>
-          <NuxtLink class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="/about-us">About Us</NuxtLink>
+          <NuxtLink class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="/about">About Us</NuxtLink>
      
           <NuxtLink class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="/draggable">Draggable</NuxtLink>
           <NuxtLink class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="/drg">Draggable 2</NuxtLink>
+          <NuxtLink class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="/test">Test</NuxtLink>
                    </div>
         </div>
       </div>

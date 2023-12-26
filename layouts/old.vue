@@ -1,8 +1,6 @@
 <template>
     <div>
-      <Navbar />
-
-      <!-- <header>
+      <header>
         <ul>
           <li><nuxt-link to="/">Home</nuxt-link></li>
           <li><nuxt-link to="/about">About</nuxt-link></li>
@@ -10,12 +8,12 @@
             <nuxt-link to="/login">Login</nuxt-link>
           </li>
         </ul>
-      </header> -->
+      </header>
       <div class="mainContent">
         <slot />
       </div>
-      <!-- <footer>
+      <footer>
         <h1>Footer</h1>
-      </footer> -->
+      </footer>
     </div>
   </template>
